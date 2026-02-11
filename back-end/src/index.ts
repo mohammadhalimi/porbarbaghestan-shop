@@ -5,6 +5,8 @@ import helmet from "helmet";
 import morgan from "morgan";
 import dotenv from "dotenv";
 import { connectDB } from "./config/database";
+import { createInitialAdmin } from './services/admin.service';
+import adminRoutes from "./routes/admin.routes";
 
 // Load environment variables
 dotenv.config();
@@ -22,6 +24,9 @@ app.use(cors({
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Routes
+app.use('/api/admin', adminRoutes);
 
 // Health Check Route
 app.get("/api/health", (_req,res) => {
@@ -47,7 +52,7 @@ const startServer = async () => {
   try {
     // Connect to Database
     await connectDB();
-    
+    await createInitialAdmin();
     // Start Express server
     app.listen(PORT, () => {
       console.log(`🚀 Server is running on port ${PORT}`);
