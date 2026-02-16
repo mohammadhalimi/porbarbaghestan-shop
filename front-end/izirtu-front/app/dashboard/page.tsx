@@ -9,8 +9,9 @@ import ProductsSection from '../components/dashboard/ProductsSection';
 import BlogSection from '../components/dashboard/BlogSection';
 import SettingsSection from '../components/dashboard/SettingsSection';
 import LoadingSpinner from '../components/dashboard/LoadingSpinner';
+import AdminProfilePage from '../components/admin/profile/page';
 
-export type AdminSection = 'dashboard' | 'products' | 'blog' | 'settings';
+export type AdminSection = 'dashboard' | 'products' | 'blog' | 'settings' | 'profile';
 
 export default function AdminDashboardPage() {
   const [activeSection, setActiveSection] = useState<AdminSection>('dashboard');
@@ -45,6 +46,8 @@ export default function AdminDashboardPage() {
         return <BlogSection />;
       case 'settings':
         return <SettingsSection />;
+        case 'profile':
+          return <AdminProfilePage />;
       default:
         return <DashboardSection />;
     }

@@ -1,7 +1,7 @@
 // back-end/src/routes/admin.routes.ts
 import express from 'express';
-import { AdminController } from '../controllers/admin.controller';
-import { authMiddleware } from '../middleware/auth.middleware';
+import { AdminController } from '../../controllers/admin/admin.controller';
+import { authMiddleware } from '../../middleware/auth.middleware';
 
 const router = express.Router();
 

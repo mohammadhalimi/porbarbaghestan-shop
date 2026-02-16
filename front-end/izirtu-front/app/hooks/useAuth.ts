@@ -1,6 +1,6 @@
 // app/hooks/useAuth.ts
 import { useEffect, useState } from 'react';
-import authService, { AdminUser } from '../services/auth.service';
+import authService, { AdminUser } from '@/app/services/auth.service';
 
 export const useAuth = () => {
   const [user, setUser] = useState<AdminUser | null>(null);

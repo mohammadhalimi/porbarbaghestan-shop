@@ -1,4 +1,4 @@
-// front-end/services/auth.service.ts
+// app/services/auth.service.ts
 export interface AdminUser {
   id: string;
   username: string;

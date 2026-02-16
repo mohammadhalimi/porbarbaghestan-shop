@@ -1,6 +1,6 @@
 // back-end/src/controllers/admin.controller.ts
 import { Request, Response } from 'express';
-import { Admin } from '../models/Admin.model';
+import { Admin } from '../../models/Admin.model';
 import jwt from 'jsonwebtoken';
 
 export class AdminController {

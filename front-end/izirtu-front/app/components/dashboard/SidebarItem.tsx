@@ -14,7 +14,7 @@ export default function SidebarItem({ label, icon: Icon, isActive, onClick }: Si
   return (
     <button
       onClick={onClick}
-      className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all text-right ${
+      className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all text-right cursor-pointer ${
         isActive
           ? 'bg-emerald-50 text-emerald-600 border-r-4 border-emerald-500'
           : 'text-gray-600 hover:bg-gray-50 hover:text-emerald-600'

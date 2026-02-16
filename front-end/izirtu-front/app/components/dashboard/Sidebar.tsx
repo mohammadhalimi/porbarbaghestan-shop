@@ -1,6 +1,6 @@
 'use client';
 
-import { BarChart3, Package, FileText, Settings } from 'lucide-react';
+import { BarChart3, Package, FileText, Settings, User } from 'lucide-react';
 import SidebarItem from './SidebarItem';
 import { AdminSection } from './type/admin';
 
@@ -14,6 +14,7 @@ export default function Sidebar({ activeSection, onSectionChange }: SidebarProps
     { id: 'dashboard' as AdminSection, label: 'داشبورد', icon: BarChart3 },
     { id: 'products' as AdminSection, label: 'محصولات', icon: Package },
     { id: 'blog' as AdminSection, label: 'وبلاگ', icon: FileText },
+    { id: 'profile' as AdminSection, label: 'پروفایل', icon: User },
     { id: 'settings' as AdminSection, label: 'تنظیمات', icon: Settings },
   ];
 
