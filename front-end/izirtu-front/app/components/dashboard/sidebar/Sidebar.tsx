@@ -2,7 +2,7 @@
 
 import { BarChart3, Package, FileText, Settings, User } from 'lucide-react';
 import SidebarItem from './SidebarItem';
-import { AdminSection } from './type/admin';
+import { AdminSection } from '../type/admin';
 
 interface SidebarProps {
   activeSection: AdminSection;

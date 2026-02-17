@@ -82,7 +82,7 @@ export class AdminProfileController {
             const updatedAdmin = await Admin.findByIdAndUpdate(
                 adminId,
                 { $set: updateData },
-                { new: true, runValidators: true }
+                { returnDocument: 'after', runValidators: true }
             ).select('-password');
 
             return res.status(200).json({

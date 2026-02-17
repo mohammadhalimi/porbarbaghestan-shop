@@ -8,7 +8,7 @@ import ProfileHeader from '@/app/components/admin/profile/ProfileHeader';
 import ProfileTabs from '@/app/components/admin/profile/ProfileTabs';
 import GeneralInfoTab from '@/app/components/admin/profile/tabs/GeneralInfoTab';
 import SecurityTab from '@/app/components/admin/profile/tabs/SecurityTab';
-import LoadingSpinner from '@/app/components/dashboard/LoadingSpinner';
+import LoadingSpinner from '@/app/components/ui/LoadingSpinner';
 import profileService from '@/app/services/profile.service';
 import { AdminUser } from '@/app/services/auth.service';
 
@@ -58,19 +58,6 @@ export default function AdminProfilePage() {
   return (
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* هدر با دکمه بازگشت */}
-        <div className="mb-6">
-          <button
-            onClick={() => router.back()}
-            className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            <span>بازگشت</span>
-          </button>
-        </div>
-
         {/* خطا */}
         {error && (
           <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-6">

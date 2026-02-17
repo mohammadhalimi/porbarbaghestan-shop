@@ -11,11 +11,16 @@ module.exports = {
       animation: {
         'float': 'float 6s ease-in-out infinite',
         'pulse-slow': 'pulse 3s ease-in-out infinite',
+        'slide-down': 'slide-down 0.2s ease-out',
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-20px)' },
+        },
+        'slide-down': {
+          '0%': { transform: 'translateY(-10px)', opacity: 0 },
+          '100%': { transform: 'translateY(0)', opacity: 1 },
         }
       }
     },

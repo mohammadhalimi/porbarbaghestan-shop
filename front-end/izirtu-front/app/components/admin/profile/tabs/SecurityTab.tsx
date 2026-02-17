@@ -232,10 +232,10 @@ export default function SecurityTab() {
           <button
             type="submit"
             disabled={loading || !canSubmit}
-            className={`flex items-center gap-2 px-6 py-2 rounded-lg transition-colors cursor-pointer ${
+            className={`flex items-center gap-2 px-6 py-2 rounded-lg transition-colors ${
               loading || !canSubmit
                 ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                : 'bg-emerald-500 text-white hover:bg-emerald-600'
+                : 'bg-emerald-500 text-white hover:bg-emerald-600 cursor-pointer'
             }`}
           >
             {loading ? (

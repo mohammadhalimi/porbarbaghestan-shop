@@ -5,9 +5,12 @@ import helmet from "helmet";
 import morgan from "morgan";
 import dotenv from "dotenv";
 import { connectDB } from "./config/database";
+import { initUploadDirectories } from './utils/initUploadDirs';
 // import { createInitialAdmin } from './services/admin.service';
 import adminRoutes from "./routes/admin/admin.routes";
 import profileRoutes from "./routes/admin/profile.routes"
+import productRoutes from "./routes/admin/product.routes";
+import path from 'path';
 
 // Load environment variables
 dotenv.config();
@@ -27,8 +30,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
+app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 app.use('/api/admin', adminRoutes);
 app.use('/api/admin/profile', profileRoutes)
+app.use('/api/admin/products', productRoutes); // اضافه کردن روت محصولات
 
 // Health Check Route
 app.get("/api/health", (_req,res) => {
@@ -66,7 +71,7 @@ const startServer = async () => {
     process.exit(1);
   }
 };
-
+initUploadDirectories();
 // Start the server
 startServer();
 

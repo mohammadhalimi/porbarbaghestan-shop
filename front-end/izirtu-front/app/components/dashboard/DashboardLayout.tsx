@@ -2,8 +2,8 @@
 
 import { ReactNode, useState } from 'react';
 import Header from './Header';
-import Sidebar from './Sidebar';
-import MobileSidebar from './MobileSidebar';
+import Sidebar from './sidebar/Sidebar';
+import MobileSidebar from './sidebar/MobileSidebar';
 import { AdminSection } from './type/admin';
 import { AdminUser } from '@/app/services/auth.service';
 

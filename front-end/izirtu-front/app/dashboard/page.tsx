@@ -4,11 +4,11 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/app/hooks/useAuth';
 import DashboardLayout from '../components/dashboard/DashboardLayout';
-import DashboardSection from '../components/dashboard/DashboardSection';
-import ProductsSection from '../components/dashboard/ProductsSection';
-import BlogSection from '../components/dashboard/BlogSection';
-import SettingsSection from '../components/dashboard/SettingsSection';
-import LoadingSpinner from '../components/dashboard/LoadingSpinner';
+import DashboardSection from '../components/dashboard/sections/DashboardSection';
+import ProductsSection from '../components/dashboard/sections/ProductsSection';
+import BlogSection from '../components/dashboard/sections/BlogSection';
+import SettingsSection from '../components/dashboard/sections/SettingsSection';
+import LoadingSpinner from '../components/ui/LoadingSpinner';
 import AdminProfilePage from '../components/admin/profile/page';
 
 export type AdminSection = 'dashboard' | 'products' | 'blog' | 'settings' | 'profile';
