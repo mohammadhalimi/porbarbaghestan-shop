@@ -37,7 +37,7 @@ export default function ConfirmModal({
           {/* دکمه بستن */}
           <button
             onClick={onCancel}
-            className="absolute left-4 top-4 text-gray-400 hover:text-gray-600 transition-colors"
+            className="absolute left-4 top-4 text-gray-400 hover:text-gray-600 transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -61,13 +61,13 @@ export default function ConfirmModal({
           <div className="flex gap-3">
             <button
               onClick={onConfirm}
-              className="flex-1 px-4 py-3 bg-red-500 text-white rounded-lg font-medium hover:bg-red-600 transition-colors"
+              className="flex-1 px-4 py-3 bg-red-500 text-white rounded-lg font-medium hover:bg-red-600 transition-colors cursor-pointer"
             >
               {confirmText}
             </button>
             <button
               onClick={onCancel}
-              className="flex-1 px-4 py-3 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition-colors"
+              className="flex-1 px-4 py-3 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition-colors cursor-pointer"
             >
               {cancelText}
             </button>

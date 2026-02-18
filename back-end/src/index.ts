@@ -11,6 +11,7 @@ import adminRoutes from "./routes/admin/admin.routes";
 import profileRoutes from "./routes/admin/profile.routes"
 import productRoutes from "./routes/admin/product.routes";
 import path from 'path';
+import blogRoutes from "./routes/admin/blog.routes";
 
 // Load environment variables
 dotenv.config();
@@ -34,7 +35,7 @@ app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 app.use('/api/admin', adminRoutes);
 app.use('/api/admin/profile', profileRoutes)
 app.use('/api/admin/products', productRoutes); // اضافه کردن روت محصولات
-
+app.use('/api/admin/blog', blogRoutes);
 // Health Check Route
 app.get("/api/health", (_req,res) => {
   res.json({
