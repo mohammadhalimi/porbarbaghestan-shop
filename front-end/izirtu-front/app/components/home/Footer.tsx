@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid lg:grid-cols-4 gap-12 mb-12">
           <AboutSection />
           <QuickLinks />
-          <ServicesList />
+          <NamadEtemad />
           <ContactInfo />
         </div>
         <FooterBottom />
@@ -32,24 +32,49 @@ function AboutSection() {
           <p className="text-sm text-gray-400">متخصص کودهای کشاورزی</p>
         </div>
       </div>
-      <p className="text-gray-400 mb-6">
-        پیشرو در ارائه خدمات مشاوره تخصصی کودهای کشاورزی. ما با دانش روز و تجربه عملی، همراه شما در مسیر کشاورزی پایدار هستیم.
+      <p className="text-gray-400 mb-6 text-justify">
+        شرکت تولیدی پربار باغستان (سهامی خاص) در سال ۱۳۸۵ با تولید کودهای گرانوله شیمیایی و ارگانیک فعالیت خود را آغاز نمود.
       </p>
     </div>
   );
 }
 
 function QuickLinks() {
-  const links = ['خدمات تخصصی', 'انواع کودها', 'مقالات آموزشی', 'درباره ما', 'تماس با ما'];
-
+  const links = [
+    {
+      name: 'خدمات',
+      id: 1,
+      link: '/services'
+    },
+    {
+      name: 'درباره ما',
+      id: 2,
+      link: '/about'
+    },
+    {
+      name: 'مقالات',
+      id: 3,
+      link: '/blog'
+    },
+    {
+      name: 'تماس با ما',
+      id: 4,
+      link: '/contact'
+    },
+    {
+      name: 'محصولات',
+      id: 5,
+      link: '/products'
+    }
+  ];
   return (
     <div>
-      <h3 className="text-lg font-bold mb-6">دسترسی سریع</h3>
+      <h1 className="text-lg font-bold mb-6">دسترسی سریع</h1>
       <ul className="space-y-3">
         {links.map((item) => (
-          <li key={item}>
-            <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors">
-              {item}
+          <li key={item.id}>
+            <a href={item.link} className="text-gray-400 hover:text-emerald-400 transition-colors">
+              {item.name}
             </a>
           </li>
         ))}
@@ -58,21 +83,30 @@ function QuickLinks() {
   );
 }
 
-function ServicesList() {
-  const services = ['مشاوره خاک', 'برنامه کوددهی', 'مدیریت آبیاری', 'کشاورزی ارگانیک', 'مقاوم‌سازی محصول'];
-
+function NamadEtemad() {
   return (
     <div>
-      <h3 className="text-lg font-bold mb-6">خدمات ما</h3>
-      <ul className="space-y-3">
-        {services.map((item) => (
-          <li key={item}>
-            <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors">
-              {item}
-            </a>
-          </li>
-        ))}
-      </ul>
+      <a
+        referrerPolicy="origin"
+        target="_blank"
+        href="https://trustseal.enamad.ir/?id=565423&Code=l0OgPL6bH7L51AQyiSkapdAxl0JQe8WF"
+        aria-label="نماد اعتماد الکترونیک"
+        title="نماد اعتماد الکترونیک"
+      >
+        <img
+          referrerPolicy="origin"
+          src="https://trustseal.enamad.ir/logo.aspx?id=565423&Code=l0OgPL6bH7L51AQyiSkapdAxl0JQe8WF"
+          alt="نماد اعتماد الکترونیک"
+          width="100"
+          height="100"
+          style={{
+            backgroundColor: 'white',
+            cursor: 'pointer',
+            border: '1px solid #e5e7eb',
+            borderRadius: '8px'
+          }}
+        />
+      </a>
     </div>
   );
 }
@@ -82,15 +116,15 @@ function ContactInfo() {
     <div>
       <h3 className="text-lg font-bold mb-6">ارتباط با ما</h3>
       <ul className="space-y-4">
-        <ContactItem icon={<Phone className="w-5 h-5" />} text="۰۲۱-۱۲۳۴۵۶۷۸" />
-        <ContactItem icon={<Mail className="w-5 h-5" />} text="info@agrofert.ir" />
-        <ContactItem icon={<MapPin className="w-5 h-5" />} text="تهران، خیابان ولیعصر" />
+        <ContactItem icon={<Phone className="w-5 h-5" />} text="02133370954" />
+        <ContactItem icon={<Mail className="w-5 h-5" />} text="jamal.sufiyan90@gmail.com" />
+        <ContactItem icon={<MapPin className="w-5 h-5" />} text="تهران، خیابان شهید بهشتی ، خیابان اندیشه اصلی ، بین اندیشه ۱و۲ ، پلاک ۵۲ ، واحد ۲ "/>
       </ul>
     </div>
   );
 }
 
-function ContactItem({ icon, text } : ContactItemProps) {
+function ContactItem({ icon, text }: ContactItemProps) {
   return (
     <li className="flex items-center gap-3 text-gray-400">
       {icon}

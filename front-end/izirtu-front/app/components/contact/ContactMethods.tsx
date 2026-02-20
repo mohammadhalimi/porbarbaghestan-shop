@@ -30,7 +30,7 @@ export default function ContactMethods() {
     {
       icon: MapPin,
       title: 'آدرس',
-      details: ['تهران، خیابان ولیعصر، پلاک ۱۲۳۴', 'طبقه سوم، واحد ۵'],
+      details: ['تهران، خیابان شهید بهشتی ، خیابان اندیشه اصلی ، بین اندیشه ۱و۲ ، پلاک ۵۲ ، واحد ۲ '],
       description: 'دفتر مرکزی',
       gradient: 'bg-linear-to-r from-purple-500 to-pink-400'
     },

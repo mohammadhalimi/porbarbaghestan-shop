@@ -15,7 +15,7 @@ export default function AdminLoginLayout({
         <>
             <html lang="fa" dir="rtl" className={vazir.className}>
                 <head>
-                    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+                    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
                     <meta name="theme-color" content="#10b981" />
                 </head>
                 <body className="antialiased">
