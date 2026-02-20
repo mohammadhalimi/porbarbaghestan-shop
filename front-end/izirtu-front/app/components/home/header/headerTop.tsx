@@ -12,7 +12,7 @@ export const navItems: NavItemType[] = [
     { text: 'خانه', href: '/', id: 1 },
     { text: 'خدمات', href: '/services', id: 2 },
     { text: 'محصولات', href: '/product', id: 3 },
-    { text: 'مقالات', href: '/articles', id: 4 },
+    { text: 'مقالات', href: '/blog', id: 4 },
     { text: 'درباره ما', href: '/about', id: 5 },
     { text: 'تماس', href: '/contact', id: 6 }
 ];

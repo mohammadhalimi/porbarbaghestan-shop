@@ -45,11 +45,11 @@ class BlogService {
     const headers: Record<string, string> = {
       'Content-Type': 'application/json',
     };
-    
+
     if (token) {
       headers['Authorization'] = `Bearer ${token}`;
     }
-    
+
     return headers;
   }
 
@@ -97,7 +97,7 @@ class BlogService {
   // ایجاد مقاله جدید
   async createPost(formData: FormData): Promise<BlogPost> {
     const token = this.getToken();
-    
+
     const response = await fetch(`${API_URL}/admin/blog`, {
       method: 'POST',
       headers: {
@@ -118,7 +118,7 @@ class BlogService {
   // بروزرسانی مقاله
   async updatePost(id: string, formData: FormData): Promise<BlogPost> {
     const token = this.getToken();
-    
+
     const response = await fetch(`${API_URL}/admin/blog/${id}`, {
       method: 'PUT',
       headers: {
@@ -160,6 +160,21 @@ class BlogService {
 
     if (!response.ok) {
       throw new Error(data.message || 'خطا در دریافت تگ‌ها');
+    }
+
+    return data.data;
+  }
+
+  //دریافت پست ها برای داینامیک روت
+  async getPostBySlug(slug: string): Promise<BlogPost> {
+    const response = await fetch(`${API_URL}/blog/${slug}`, {
+      headers: this.getHeaders(),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || 'خطا در دریافت مقاله');
     }
 
     return data.data;

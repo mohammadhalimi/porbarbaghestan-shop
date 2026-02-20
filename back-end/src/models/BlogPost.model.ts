@@ -133,7 +133,7 @@ BlogPostSchema.pre('save', function() {
 });
 // ایندکس برای جستجو
 BlogPostSchema.index({ title: 'text', content: 'text', tags: 'text' });
-BlogPostSchema.index({ slug: 1 });
+// BlogPostSchema.index({ slug: 1 });
 BlogPostSchema.index({ publishedAt: -1 });
 
 export const BlogPost = mongoose.model<IBlogPost>('BlogPost', BlogPostSchema);

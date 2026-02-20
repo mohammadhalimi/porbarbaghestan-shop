@@ -11,19 +11,19 @@ export class BlogController {
   static async getAllPosts(req: Request, res: Response): Promise<Response> {
     try {
       const { page = 1, limit = 10, tag, search } = req.query;
-      
+
       const query: any = {};
-      
+
       if (tag) {
         query.tags = tag;
       }
-      
+
       if (search) {
         query.$text = { $search: search as string };
       }
-      
+
       const skip = (Number(page) - 1) * Number(limit);
-      
+
       const [posts, total] = await Promise.all([
         BlogPost.find(query)
           .sort({ publishedAt: -1 })
@@ -55,9 +55,9 @@ export class BlogController {
   static async getPost(req: Request, res: Response): Promise<Response> {
     try {
       const { id } = req.params;
-      
+
       const post = await BlogPost.findById(id);
-      
+
       if (!post) {
         return res.status(404).json({
           success: false,
@@ -82,9 +82,9 @@ export class BlogController {
   static async getPostBySlug(req: Request, res: Response): Promise<Response> {
     try {
       const { slug } = req.params;
-      
+
       const post = await BlogPost.findOne({ slug });
-      
+
       if (!post) {
         return res.status(404).json({
           success: false,
@@ -145,10 +145,10 @@ export class BlogController {
       let parsedInternalLinks = [];
       if (internalLinks) {
         try {
-          parsedInternalLinks = typeof internalLinks === 'string' 
-            ? JSON.parse(internalLinks) 
+          parsedInternalLinks = typeof internalLinks === 'string'
+            ? JSON.parse(internalLinks)
             : internalLinks;
-          
+
           // اعتبارسنجی محصولات
           for (const link of parsedInternalLinks) {
             const product = await Product.findById(link.productId);
@@ -208,7 +208,7 @@ export class BlogController {
       const { title, content, excerpt, tags, internalLinks, metaTitle, metaDescription, metaKeywords } = req.body;
 
       const post = await BlogPost.findById(id);
-      
+
       if (!post) {
         return res.status(404).json({
           success: false,
@@ -241,10 +241,10 @@ export class BlogController {
       let parsedInternalLinks = post.internalLinks;
       if (internalLinks) {
         try {
-          parsedInternalLinks = typeof internalLinks === 'string' 
-            ? JSON.parse(internalLinks) 
+          parsedInternalLinks = typeof internalLinks === 'string'
+            ? JSON.parse(internalLinks)
             : internalLinks;
-          
+
           // اعتبارسنجی محصولات
           for (const link of parsedInternalLinks) {
             const product = await Product.findById(link.productId);
@@ -276,9 +276,9 @@ export class BlogController {
             metaKeywords: metaKeywords || post.metaKeywords,
           },
         },
-        { 
-          returnDocument: 'after', 
-          runValidators: true 
+        {
+          returnDocument: 'after',
+          runValidators: true
         }
       );
 
@@ -302,7 +302,7 @@ export class BlogController {
       const { id } = req.params;
 
       const post = await BlogPost.findById(id);
-      
+
       if (!post) {
         return res.status(404).json({
           success: false,

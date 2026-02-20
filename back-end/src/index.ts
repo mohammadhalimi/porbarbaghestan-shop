@@ -12,6 +12,7 @@ import profileRoutes from "./routes/admin/profile.routes"
 import productRoutes from "./routes/admin/product.routes";
 import path from 'path';
 import blogRoutes from "./routes/admin/blog.routes";
+import publicBlogRoutes from './routes/public/blog.routes';
 
 // Load environment variables
 dotenv.config();
@@ -34,8 +35,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 app.use('/api/admin', adminRoutes);
 app.use('/api/admin/profile', profileRoutes)
-app.use('/api/admin/products', productRoutes); // اضافه کردن روت محصولات
+app.use('/api/admin/products', productRoutes);
 app.use('/api/admin/blog', blogRoutes);
+app.use('/api/blog', publicBlogRoutes);
+
 // Health Check Route
 app.get("/api/health", (_req,res) => {
   res.json({
