@@ -6,6 +6,7 @@ export interface ProductSize {
 }
 
 export interface Product {
+  slug: string;
   _id: string;
   name: string;
   brand: 'izirtuland' | 'khakshimi';
